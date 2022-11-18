@@ -1,0 +1,107 @@
+FBS_Booking_Transaction Table
+
+
+USE [FlightBooking]
+GO
+
+/****** Object:  Table [dbo].[FBS_Booking_Transaction]    Script Date: 6/3/2022 5:06:42 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[FBS_Booking_Transaction]
+(
+	[FBS_Booking_Id] [int] NOT NULL,
+	[FBS_Flight_Id] [int] NOT NULL,
+	[Cust_First_Name] [nvarchar](50) NOT NULL,
+	[Cust_Last_Name] [nvarchar](50) NOT NULL,
+	[Cust_EmailId] [nvarchar](50) NOT NULL,
+	[Cust_Contact_No] [int] NOT NULL,
+ CONSTRAINT [PK_FBS_Booking_Transaction] PRIMARY KEY CLUSTERED 
+(
+	[FBS_Booking_Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+FBS_Booking_Master Table
+
+
+USE [FlightBooking]
+GO
+
+/****** Object:  Table [dbo].[FBS_Flight_Master]    Script Date: 6/3/2022 5:08:08 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[FBS_Flight_Master](
+	[FBS_Flight_Id] [int] NOT NULL,
+	[FBS_Flight_Origin] [nvarchar](50) NOT NULL,
+	[FBS_Flight_Destination] [nvarchar](50) NOT NULL,
+	[FBS_Flight_Date] [date] NOT NULL,
+	[FBS_Flight_Time] [time](7) NOT NULL,
+	[FBS_Flight_Fare] [int] NOT NULL,
+ CONSTRAINT [PK_FBS_Flight_Master] PRIMARY KEY CLUSTERED 
+(
+	[FBS_Flight_Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+FBS Service Location Table
+
+USE [FlightBooking]
+GO
+
+/****** Object:  Table [dbo].[FBS_ServiceLocation]    Script Date: 6/3/2022 5:08:41 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[FBS_ServiceLocation](
+	[FBS_ServiceLocation_Id] [int] NULL,
+	[FBS_LocationName] [nvarchar](50) NOT NULL,
+ CONSTRAINT [PK_FBS_ServiceLocation] PRIMARY KEY CLUSTERED 
+(
+	[FBS_LocationName] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+FBS User Table
+
+USE [FlightBooking]
+GO
+
+/****** Object:  Table [dbo].[FBS_User]    Script Date: 6/3/2022 5:09:10 AM ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[FBS_User](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [nvarchar](50) NOT NULL,
+	[Username] [nvarchar](50) NOT NULL,
+	[Password] [nvarchar](50) NOT NULL,
+ CONSTRAINT [PK_FBS_User] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------
+
