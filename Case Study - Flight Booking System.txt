@@ -1,0 +1,16 @@
+Shahzadi Shaikh : Case Study
+
+GitHub Link : https://github.com/Shahzadi-Shaikh/Flight_Booking_System
+
+
+Flight Booking System HLD
+
+Flight Booking System LLD
+
+Flight Booking System Recording
+
+Flight Booking System Frontend
+
+Flight Booking System Backend
+
+Flight Booking System DB-Script
